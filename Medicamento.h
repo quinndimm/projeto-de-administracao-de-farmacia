@@ -1,30 +1,33 @@
+
 /*Estrutura do tipo medicamento */
 typedef struct{
 }Med;
 
-/*Declaração das funções que gerenciam as ações relacionadas aos medicamentos */
-void gerenciaDeMedicamentos (Med*, int*, FILE*);
+     /*Codigo da função que gerencia as ações relacionadas aos produtos*/
+     void gerenciaDeMedicamentos(Med *medicamento, int *contMedicamento, FILE *arquivo)
 
+     void cadastrarMedicamento(Med medicamento, int identificador)
 
-     Prod cadastrarMedicamento(Med, int);
+     /*Função que lista os medicamentos que estão cadastrados*/
+void listarProdutosCadastrados(Med *medicamento, int contMedicamento)
 
+/*Chamando função para ordenar medicamentos por nome*/
+ ordenarMedicamentoPorNome(medicamento, contMedicamento)
 
-     void listarMedicamentosCadastrados(Med, int);
+ /*Função que filtra a categoria do medicamento para imprimi-lo*/
+void filtrarCategoria(Med *medicamento, int contMedicamento)
 
+/*Função que ordena medicamentos por nome*/
+void ordenarMedicamentoPorNome(Med *medicamento, int contMedicamento)
 
-          void ordenarMedicamentoPorNomme(Med, int);
+/*Função que busca um medicamento cadastrado*/
+void buscarMedicamentoCadastrado(Med *medicamento, int conMedicamento)
 
+/*Função que imprime um medicamento*/
+     void imprimirMedicamento(Med medicamento)
 
-          void filtrarCategoria();
+     /*Função que atualiza um produto já cadastrado*/
+     void atualizarMedicamentoCadastrado(Med *medicamento, int contMedicamento)
 
-
-     void buscarMedicamentoCadastrados(Med, int);
-
-
-     void atualizarMedicamentoCadastrado(Med, int);
-
-
-     void atualizarEstoqueMedicamento(Med, int);
-
-
-     void imprimirMedicamento(Med);
+     /*Função que atualiza o estoque de um medicamento*/
+     void atualizarEstoqueMedicamento(Med *medicamento, int contMedicamento)

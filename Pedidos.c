@@ -1,6 +1,5 @@
-#include"Clientes.h"
 #include"Pedidos.h"
-#include"Medicamento.h"
+
 
 /*Estrutura do tipo pedido junto com as estruturas 'cliente' e 'medicamento' */
 typedef struct{

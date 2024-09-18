@@ -78,7 +78,7 @@ typedef struct{
 }
 
 /*Codigo da função que cadastra um produto*/
-Med cadastrarMedicamento(Med medicamento, int identificador) {
+void cadastrarMedicamento(Med medicamento, int identificador) {
      char aux[15];
 
      do{
@@ -101,7 +101,6 @@ Med cadastrarMedicamento(Med medicamento, int identificador) {
                     system("clear");
                     printf("Cadastro de Medicamentos\n");
                     continue;
-          
                }
           }
           break;
@@ -140,6 +139,7 @@ Med cadastrarMedicamento(Med medicamento, int identificador) {
      break;
 }
 while(1);
+               }
 
 if(identificador == 0){
        printf("\nMedicamento cadastrado com sucesso\n");
@@ -157,7 +157,7 @@ void listarProdutosCadastrados(Med *medicamento, int contMedicamento);{
     };
 
 /*Chamando função para ordenar medicamentos por nome*/
-ordenarMedicamentoPorNome(medicamento, contMedicamento);
+ ordenarMedicamentoPorNome(medicamento, contMedicamento)
 
 printf("Deseja filtrar por categoria [s/n]\n");
 scanf(" %c%c",&filtrar);
@@ -181,13 +181,11 @@ switch(filtrar){  /*Swith/case para verificar como o usuario deseja listar os me
                 sleep(2);
            };
            break;
-     };
-};
 
 system("clear");
 
 menu(); /*Chamando a função menu*/
-};
+
 
 /*Função que filtra a categoria do medicamento para imprimi-lo*/
 void filtrarCategoria(Med *medicamento, int contMedicamento){
@@ -274,19 +272,19 @@ void buscarMedicamentoCadastrado(Med *medicamento, int conMedicamento){
      menu();  /*Chamando a função menu*/
 
      /*Função que imprime um medicamento*/
-     void imprimirMedicamento(Med medicamento) {
+     void imprimirMedicamento(Med medicamento);{
           printf("Codigo: %d\n", medicamento.codigo);
           printf("Nome: %s\n", medicamento.nome);
           printf("Categoria: %s\n", medicamento.categoria);
           printf("fornecedor: %s\n", medicamento.fornecedor);
           printf("Quantidade: %d\n", medicamento.quantidade);
           printf("Valor unitario: %.2f\n\n", medicamento.valorUnidade);
-        };
+        }
      }
 
      /*Função que atualiza um produto já cadastrado*/
      void atualizarMedicamentoCadastrado(Med *medicamento, int contMedicamento){
-          Prod aux;
+          Med aux;
           int i, marcado=0;
 
           printf("Digite o codigo do medicamento que deseja atualizar:");
