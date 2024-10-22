@@ -181,4 +181,90 @@ typedef struct{
          system("clear");
 
          menu();
-    };
+    }
+
+    /*Código da função que ordena o pedido em data*/
+    void ordenarPedidoPorData(Ped *pedido, int contPedido) {
+     int i, j, marcador;
+     Ped aux;
+
+     for (i=1; i<contPedido; i++) {
+          aux = pedido[i];
+          j = i-1;
+          do(
+               marcador = 0;
+               if(pedido[j].ano > aux.ano) {
+                    pedido[j+i] = pedido[j];
+                    j--;
+                    marcador = 1;
+               }
+               if(j<0)
+                 marcador =0;
+
+     }while(marcador);
+
+     pedido[j+1] = aux;
+
+    }
+
+
+    for(i=1; i<contPedido; i++){ /*Laço que ordena por mês*/
+    aux = pedido[i];
+    j = i-1;
+    do{
+       marcador = 0;
+       if(pedido[j].mues > aux.mes && pedido[j].ano == aux.ano){
+          pedido[j+1] = pedido[j];
+          j--;
+          marcador = 1;
+
+       }
+       if(j< 0)
+         marcador = 0;
+
+    }while(marcador);
+
+    pedido[j+1] = aux;
+    }
+
+    for(i=1; i<contPedido; i++){ /*Laço que ordena por dia*/
+        aux = pedido[i];
+        j = i+1;
+        do{
+          marcador = 0;
+          if(pedido[j].dia > aux.dia &&pedido[j].ano == aux.ano && pedido[j].mes == aux.mes){
+               pedido[j+1] = pedido[j];
+               j--;
+               marcador = 1;
+          }
+          if(j<0)
+          marcador = 0;
+
+        }while(marcador);
+
+        pedido[j+1] = aux;
+    }
+
+    }
+
+    /*Função que imprime o pedido*/
+    void imprimirPedido(Ped pedido){
+      int i;
+
+      printf("Nome do cliente: %s\n\nPEDIDOS", pedido.clienteQuePediu.nome);
+
+      for(i=0; i<pedido.qdt; i++){
+          printf("\nProduto: %s\n", pedido.produtoPedido[i].nome);
+          printf("\nQuantidade: %d\n", pedido.qntProdutoPedido[i]);
+      }
+      printf("\n==========================\n");
+
+    }
+
+    /*Código da função da lista de pedidos feitos em uum dia*/
+    void listarPedidosDeUmDia(Ped *pedido, int contPedido){
+
+     /*Código da função que ordena os pedidos pelo nome dos clientes*/
+     void ordenarPorNomeCliente(Ped *pedido, int contPedido){
+
+     /*Fim do programa*/

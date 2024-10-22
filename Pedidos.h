@@ -16,3 +16,16 @@ typedef struct{}Ped;
 
       /*Função que lista os pedidos de um cliente*/
     void listarPedidosDeUmCliente(Ped *pedido, int contPedido);
+
+    /*Código da função que ordena o pedido em data*/
+    void ordenarPedidoPorData(Ped *pedido, int contPedido);
+
+    /*Função que imprime o pedido*/
+    void imprimirPedido(Ped pedido);
+
+    /*Código da função da lista de pedidos feitos em uum dia*/
+    void listarPedidosDeUmDia(Ped *pedido, int contPedido);
+
+     /*Código da função que ordena os pedidos pelo nome dos clientes*/
+     void ordenarPorNomeCliente(Ped *pedido, int contPedido);
+
