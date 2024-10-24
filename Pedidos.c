@@ -263,8 +263,68 @@ typedef struct{
 
     /*Código da função da lista de pedidos feitos em uum dia*/
     void listarPedidosDeUmDia(Ped *pedido, int contPedido){
+     int i, dia, mes, ano, marcador = 0;
+     char d[3];
+     char m[3];
+     char a[5];
+
+     printf("Para visualizar todos os pedidos de um determinado dia entre com a data OBS:(apenas numeros)\n");
+     printf("Dia: ");
+     scanf(" %s", d);
+     printf(" Mes: ");
+     scanf(" %s", m);
+     printf(" Ano: ");
+     scanf(" %s", a);
+
+     system("clear");
+
+     dia = atoi(d);
+     mes = atoi(m);
+     ano = atoi(a);
+
+     ordenarPorNomeClient(pedido, contPedido); /*Função que ordena os pedidos por nome de cliente*/
+
+     for(i=0; i<contPedido; i++) {
+          if(pedido[i].ano == ano && pedido[i].mes == mes && pedido[i].dia == dia){
+               imprimirPedido(pedido[i]);
+               marcador = 1;
+          }
+     }
+
+     if(!marcador){
+          printf("\n !!NEM UM PEDIDO CADASTRADO NESSE DIA!!\n");
+          sleep(2);
+     }
+     else
+        getch();
+
+        system("clear");
+
+        menu();
+    } 
 
      /*Código da função que ordena os pedidos pelo nome dos clientes*/
      void ordenarPorNomeCliente(Ped *pedido, int contPedido){
+          int i, j, marcador;
+          Ped aux;
+
+          for(i=1; i<contPedido; i++){ /*Laço que faz a busca e ordenação*/
+              aux = pedido[i];
+              j = i+1;
+              do{
+               marcador = 0;
+               if(strcmp(pedido[j].clienteQuePediu.nome, aux.clienteQuePediu.nome) > 0){
+                    pedido[j+1] = pedido[j];
+                    j--;
+                    marcador = 1;
+               }
+               if(j < 0)
+                 marcador = 0;
+
+              }while(marcador);
+
+              pedido[j+1] = aux;
+          }
+     }
 
      /*Fim do programa*/
